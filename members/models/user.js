@@ -17,4 +17,7 @@ userschema.virtual("fullname").get(function(){
   
     return fullname;
   
-})
+});
+
+
+module.exports = mongoose.model("user",userschema);
