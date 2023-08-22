@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  form(action="/write", method="post")
+    label(for="title") title:
+    input(type="text", id="title", name="title")
+
+    label(for="text") text:
+    textarea(id="text", name="text", rows="4")
+
+    button(type="submit") Submit
