@@ -5,7 +5,7 @@ const { body, validationResult } = require("express-validator");
 
 
 exports.create_user_get = async(req,res) => {
-    res.render("sign-up")
+    res.render("sign-up",{title:"sign up"})
 }
 
 exports.create_user_post = [

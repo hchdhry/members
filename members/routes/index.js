@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+const mssg = require("../controllers/mssg")
 const signup = require('../controllers/sign-up'); 
 
 
@@ -8,16 +8,11 @@ const signup = require('../controllers/sign-up');
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
+
 router.post('/sign-up',signup.create_user_post);
-
-router.get('/write', function(req, res, next) {
-  res.render('write', { title: 'message' });
-});
-
-
-router.get('/sign-up', function(req, res, next) {
-  res.render('sign-up', { title: 'form' });
-});
+router.get('/write',mssg.mssg_get);
+router.post('/write',mssg.mssg_post);
+router.get('/sign-up',signup.create_user_get);
 
 
 module.exports = router;

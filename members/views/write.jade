@@ -9,3 +9,9 @@ block content
     textarea(id="text", name="text", rows="4")
 
     button(type="submit") Submit
+
+
+ if errors
+   ul
+    for error in errors
+     li!= error.msg
