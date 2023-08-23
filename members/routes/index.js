@@ -6,7 +6,7 @@ const signup = require('../controllers/sign-up');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Express',user: req.user });
 });
 
 router.post('/sign-up',signup.create_user_post);

@@ -8,11 +8,19 @@ exports.create_user_get = async(req,res) => {
     res.render("sign-up",{title:"sign up"})
 }
 
-exports.create_user_post = [
+exports.create_user_post = [ 
+  
+  passport.authenticate("local", {
+    successRedirect: "/",
+    failureRedirect: "/"
+  }),
+
   body("first_name").trim().isLength({ min: 1 }).escape(),
   body("last_name").trim().isLength({ min: 1 }).escape(),
   body("email").trim().isLength({ min: 1 }).escape(),
   body("password").trim().isLength({ min: 1 }).escape(),
+
+ 
 
   asyncHandler(async (req, res,next) => {
     const errors = validationResult(req);
